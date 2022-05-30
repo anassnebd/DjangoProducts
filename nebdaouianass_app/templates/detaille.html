@@ -1,0 +1,47 @@
+{% include 'header.html' %}
+{% block content %}
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-md-6">
+                <div class="authincation-content">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="auth-form">
+                                <h4 class="text-center mb-4">{{produit.nomProduit}}</h4>
+
+                                <form action="create" method="post">
+
+                                    <div class="form-group mb-3">
+                                        <label><strong>produit reference</strong></label>
+                                        <input type="text" name="produit reference" class="form-control" value="{{produit.produitRef}}" readonly>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label><strong>nom du produit</strong></label>
+                                        <input type="text" name="nom du produit" class="form-control" value="{{produit.nomProduit}}" readonly>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label><strong>date de production</strong></label>
+                                        <input type="text" name="nom du produit" class="form-control" value="{{produit.dateProduction}}" readonly>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label><strong>prix</strong></label>
+                                        <input type="text" name="prix" class="form-control" value="{{produit.prix}}" readonly>
+                                    </div>
+                                     <div class="form-group mb-3">
+                                        <label><strong>Categorie</strong></label>
+                                        <input type="text" name="Categorie" class="form-control" value="{{produit.categorie.nomCategorie}}" readonly>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% include 'footer.html' %}

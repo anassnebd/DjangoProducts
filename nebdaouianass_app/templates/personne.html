@@ -1,0 +1,67 @@
+{% load static %}
+{% include 'header.html' %}
+{% block content %}
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0 justify-content-center">
+            <div class="col-sm-6 p-md-0">
+                <div class="row">
+                    <h4 class="mt-2">Liste des personnes</h4>
+                </div>
+            </div>
+        </div>
+        <center>
+        <div style="margin:0 auto">
+            <img src="{% static 'nebdaouianass_app/person.png' %}" width="300px">
+        </div>
+        </center><br>
+        <!-- row -->
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive pre-scrollable">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr align="center">
+                                    <th>ID</th>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Email</th>
+                                    <th>Commandes</th>
+                                </tr>
+                                </thead>
+                                <tbody class="" id="produit-item">
+                                {% for p in personnes %}
+                                <tr>
+                                    <td align="center">{{p.id}}</td>
+                                    <td align="center">{{p.nom}}</td>
+                                    <td align="center">{{p.prenom}}</td>
+                                    <td align="center">{{p.email}}</td>
+                                    <td align="center">
+                                        <div class="justify-content-center"><a href="/commande/{{p.id}}">
+                                            <button class="btn btn-outline-info">commande</button>
+                                        </a></div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav >
+            <ul class="pagination justify-content-center mt-3">
+                <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+                <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+                <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+                <li class="page-item"><a class="page-link" href="?page=4">4</a></li>
+                <li class="page-item"><a class="page-link" href="?page=5">5</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock content %}
+{% include 'footer.html' %}
