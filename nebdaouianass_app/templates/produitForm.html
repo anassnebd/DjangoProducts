@@ -1,0 +1,41 @@
+{% include 'header.html' %}
+{% block content %}
+    <style>
+        .input{
+            width: 300px;
+  height: 50px;
+  font-size: 14px;
+  color: black;
+  background-color: #79aec8;
+        }
+    </style>
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-md-6">
+                <img src="../../static/nebdaouianass_app/huawei.png" width="300px">
+                <div class="authincation-content">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="auth-form">
+                                <h4 class="text-center mb-4">Ajout de produit</h4>
+                                <form action="/produit/create/" method="POST">
+                                    <!--Token +form-->
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <input type="submit" class="btn btn-outline-warning inp" style="width: 300px;
+                                      height: 50px;
+                                      font-size: 14px;
+                                      color: black;
+                                      background-color: #79aec8;" value="Submit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% include 'footer.html' %}
